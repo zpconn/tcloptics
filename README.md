@@ -1,6 +1,28 @@
 
 tcloptics -- this tiny library provides utilities for building and using 'lenses' in Tcl.
 
+Examples
+--------
+
+```tcl
+% set d [dict create x 1 y 2 z [list a b [dict create y 1 z 3 f [list hello there]]]]
+x 1 y 2 z {a b {y 1 z 3 f {hello there}}}
+% lens_set d [lens [key z] [index 2] [key f] [index 1]] world
+% lens_view d [lens [key z] [index 2] [key f] each]
+hello world
+% set d [list [dict create x 1 y 1] [dict create x 2 y 2]]
+{x 1 y 1} {x 2 y 2}
+% lens_set d [lens each [key x]] 3
+% puts $d
+{x 3 y 1} {x 3 y 2}
+% set d [list [dict create hello 1] [dict create world 2]]
+{hello 1} {world 2}
+% lens_view d [lens each keys]
+hello world
+% lens_view d [lens each values]
+1 2
+```
+
 Overview
 --------
 
