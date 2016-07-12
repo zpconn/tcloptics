@@ -82,8 +82,8 @@
 # - `keys`: targets all keys of a dict.
 # - `values`: targets all values of a dict.
 #
-# It's not possible to define new primitive traveral lenses as an end-user of the library, but these three
-# traversal lenses can be composed arbitrarily and in combination with new non-traveral lenses.
+# It's not possible to define new primitive traversal lenses as an end-user of the library, but these three
+# traversal lenses can be composed arbitrarily and in combination with new non-traversal lenses.
 #
 # -- IMPLEMENTATION --
 #
