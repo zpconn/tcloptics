@@ -72,6 +72,12 @@ Or perhaps we'd like to convert the value at z to a list and append 4 to it:
 lens_append d $_z 4
 ```
 
+We can also add a new key to the nested dictionary:
+
+```tcl
+lens_set_key d [lens [key x] [index 2]] w 3
+```
+
 Note that the _z lens can be applied to any nested structure with the same "shape" as d, so
 it could potentially be reused in many places in a codebase.
 
