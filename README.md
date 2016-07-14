@@ -66,6 +66,12 @@ We can update the value at z using
 lens_set d $_z 3
 ```
 
+Or perhaps we'd like to convert the value at z to a list and append 4 to it:
+
+```tcl
+lens_append d $_z 4
+```
+
 Note that the _z lens can be applied to any nested structure with the same "shape" as d, so
 it could potentially be reused in many places in a codebase.
 
