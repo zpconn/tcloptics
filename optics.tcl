@@ -1,6 +1,6 @@
 
 namespace eval ::tcloptics {
-    namespace export lens key index lens_compose lens_view lens_update lens_set lens_append
+    namespace export lens key index lens_compose lens_view lens_update lens_set lens_append lens_set_key
 
     proc lens {args} {
         return $args
@@ -223,6 +223,11 @@ namespace eval ::tcloptics {
     proc lens_append {_d lens v} {
         upvar $_d d
         return [lens_update d $lens [format {{x} {set y $x; lappend y "%s"; return $y}} $v]]
+    }
+
+    proc lens_set_key {_d lens k v} {
+        upvar $_d d
+        return [lens_update d $lens [format {{x} {set y $x; dict set y "%s" "%s"; return $y}} $k $v]]
     }
 
     proc _isdict {v} {
